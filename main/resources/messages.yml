@@ -1,0 +1,25 @@
+#----------------------
+#\LiteCustomWorldLimit/
+#----------------------
+#messages.yml
+#插件作者:主世界
+#本插件已免费发布并在Gitee上开源
+
+#支持颜色代码
+
+#无权限提示:Title消息标题
+prefix: '&c&l✘错误'
+#无权限提示:Title消息副标题
+no-permission: '&7你没有这样做的权限'
+
+#设置插件消息前缀
+plugin-prefix: '&8&l[&b&lLiteCustomWorldLimit&8&l] '
+#重载插件配置成功
+reload-success: '&7插件配置重载成功!'
+#插件帮助消息
+help-message:
+  - '---------&8&l[&b&lLiteCustomWorldLimit&8&l]&7&l插件帮助---------'
+  - '&7指令前缀 /litecustomworldlimit 可简写为 /liteworldlimit 或 /lcwl'
+  - '&7&l/lcwl reload &r&7重载插件配置'
+  - '&7&l/lcwl help &r&7查看插件帮助'
+  - '---------&8&l[&b&lLiteCustomWorldLimit&8&l]&7&l插件帮助---------'

@@ -1,0 +1,77 @@
+#----------------------
+#\LiteCustomWorldLimit/
+#----------------------
+#config.yml
+#插件作者:主世界
+#本插件已免费发布并在Gitee上开源
+
+#下面是本插件支持设置的所有玩家权限,每个权限下面填写要限制该权限的世界名;
+#OP不受权限限制;若不想设置则不填
+#放置
+place:
+  - world1
+  - world2
+#破坏
+break:
+  - world1
+  - world2
+#丢弃物品
+drop-item:
+  - world1
+#捡起物品
+pick-item:
+  - world1
+#移动
+move:
+  - world1
+#与任何东西交互
+interact:
+  - world1
+#与实体交互
+interact-entity:
+  - world1
+#使用书与笔
+edit-book:
+  - world1
+#丢鸡蛋
+throw-egg:
+  - world1
+#钓鱼
+fish:
+  - world1
+
+#下面是本插件支持设置的所有防止的事件,每个事件下面填写要防止该事件的世界名;
+#若不想设置则不填
+#防止树叶凋敝
+leaves-decay:
+  - world
+#防止方块消退(雪,冰等)
+block-fade:
+  - world
+#防止方块被点燃
+block-ignite:
+  - world
+#防止方块燃烧
+block-burn:
+  - world
+#防止方块爆炸
+block-explode:
+  - world
+#防止方块蔓延
+block-spread:
+  - world
+#防止方块改变(结冰,黑曜石形成等)
+block-change:
+  - world
+#防止作物生长和蛋孵化
+grow:
+  - world
+#防止活塞推动物品
+piston:
+  - world
+#防止铁傀儡和雪傀儡的搭建
+entity-form:
+  - world
+#防止生物破坏门(僵尸破门等)
+break-door:
+  - world
