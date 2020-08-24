@@ -3,7 +3,7 @@
 #----------------------
 #config.yml
 #插件作者:主世界
-#本插件已免费发布并在Gitee上开源
+#本插件已免费发布并在Github上开源
 
 #下面是本插件支持设置的所有玩家权限,每个权限下面填写要限制该权限的世界名;
 #OP不受权限限制;若不想设置则不填
@@ -30,14 +30,29 @@ interact:
 #与实体交互
 interact-entity:
   - world1
+#传送
+teleport:
+  - world1
+#互换主手和副手物品
+swap-hand-items:
+  - world1
+#使用床
+enter-bed:
+  - world1
 #使用书与笔
 edit-book:
   - world1
 #丢鸡蛋
 throw-egg:
   - world1
+#对实体使用剪刀采集物品
+shear:
+  - world1
 #钓鱼
 fish:
+  - world1
+#捡起地上的箭
+pick-arrow:
   - world1
 
 #下面是本插件支持设置的所有防止的事件,每个事件下面填写要防止该事件的世界名;
@@ -56,6 +71,9 @@ block-burn:
   - world
 #防止方块爆炸
 block-explode:
+  - world
+#防止实体爆炸
+entity-explode:
   - world
 #防止方块蔓延
 block-spread:

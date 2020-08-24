@@ -15,10 +15,10 @@ public final class LiteCustomWorldLimit extends JavaPlugin {
     }
 
     public void pluginupdater() {
-        String currentversion = "1.0";
+        String currentversion = this.getDescription().getVersion();
         getLogger().info("正在检查更新......");
         try {
-            URL url = new URL("https://cdn.jsdelivr.net/gh/main-world/litecustom@update/LiteCustomWorldLimit/version.txt");
+            URL url = new URL("https://raw.githubusercontent.com/main-world/LiteCustom/master/LiteCustomWorldLimit.txt");
             InputStream is = url.openStream();
             InputStreamReader ir = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(ir);
@@ -30,11 +30,25 @@ public final class LiteCustomWorldLimit extends JavaPlugin {
                 getLogger().info("请前往相应网页下载更新!");
             }
         } catch (Throwable t) {
-            getLogger().info("更新检查失败!");
+            try {
+                URL url = new URL("https://cdn.jsdelivr.net/gh/main-world/LiteCustom@update/LiteCustomWorldLimit.txt");
+                InputStream is = url.openStream();
+                InputStreamReader ir = new InputStreamReader(is);
+                BufferedReader br = new BufferedReader(ir);
+                String version = br.readLine();
+                if (version.equals(currentversion)) {
+                    getLogger().info("插件已是最新版本!");
+                } else {
+                    getLogger().info("检查到插件有新版本!");
+                    getLogger().info("请前往相应网页下载更新!");
+                }
+            } catch (Throwable e) {
+                getLogger().info("更新检查失败!");
+            }
         }
     }
 
-    public ConfigReader Messagesconfig;
+    static ConfigReader Messagesconfig;
 
     @Override
     public void onEnable() {
@@ -45,7 +59,7 @@ public final class LiteCustomWorldLimit extends JavaPlugin {
         Messagesconfig.reloadConfig();
         getLogger().info("LiteCustomWorldLimit已成功加载!");
         getLogger().info("作者:主世界");
-        getLogger().info("本插件已免费发布并在Gitee上开源");
+        getLogger().info("本插件已免费发布并在Github上开源");
         pluginupdater();
         LiteCustomWorldLimit.INSTANCE.getCommand("litecustomworldlimit").setExecutor(new CommandHandler());
         getServer().getPluginManager().registerEvents(new EventListener(),this);

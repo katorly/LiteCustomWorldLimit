@@ -14,7 +14,7 @@ public class CommandHandler implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("litecustomworldlimit")) {
-            FileConfiguration config = LiteCustomWorldLimit.INSTANCE.getConfig();
+            FileConfiguration mconfig = LiteCustomWorldLimit.Messagesconfig.getConfig();
             if (args.length < 1) { //若只输入了个/lcwl则弹出插件帮助
                 if (!(sender instanceof Player)) {
                     Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),"litecustomworldlimit help");
@@ -25,9 +25,11 @@ public class CommandHandler implements CommandExecutor {
             } else if (Objects.equals(args[0], "reload")) { //重载插件配置的指令 lcwl reload
                 LiteCustomWorldLimit.INSTANCE.reloadConfig();
                 LiteCustomWorldLimit.INSTANCE.saveConfig();
-                sender.sendMessage(config.getString("plugin-prefix").replace("&","§") + config.getString("reload-success").replace("&","§"));
+                LiteCustomWorldLimit.Messagesconfig.reloadConfig();
+                LiteCustomWorldLimit.Messagesconfig.saveConfig();
+                sender.sendMessage(mconfig.getString("plugin-prefix").replace("&","§") + mconfig.getString("reload-success").replace("&","§"));
             } else if (Objects.equals(args[0], "help")) { //查看插件帮助的指令 lcwl help
-                List<String> helpmessage = config.getStringList("help-message");
+                List<String> helpmessage = mconfig.getStringList("help-message");
                 int i = 0;
                 for (int length = helpmessage.size(); i < length; i++) {
                     sender.sendMessage(helpmessage.get(i).replace("&","§"));
